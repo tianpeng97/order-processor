@@ -1,0 +1,30 @@
+package com.gigashad.tpeng.product_service.controller;
+
+import com.gigashad.tpeng.product_service.dto.ProductRequest;
+import com.gigashad.tpeng.product_service.dto.ProductResponse;
+import com.gigashad.tpeng.product_service.model.Product;
+import com.gigashad.tpeng.product_service.service.ProductService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/product")
+@RequiredArgsConstructor
+public class ProductController {
+    private final ProductService productService;
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public ProductResponse createProduct(@RequestBody ProductRequest productRequest) {
+        return productService.createProduct(productRequest);
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<ProductResponse> getAllProducts() {
+        return productService.getAllProducts();
+    }
+}

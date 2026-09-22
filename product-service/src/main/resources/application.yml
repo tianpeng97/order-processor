@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: product-service
+  config:
+    import: "optional:file:.env[.properties]"
+  mongodb:
+    uri: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@localhost:27017/product-service?authSource=admin

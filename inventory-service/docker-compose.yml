@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:${POSTGRES_VERSION}
+    container_name: inventory-service
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql
+      - ./docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
