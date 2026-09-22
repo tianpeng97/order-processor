@@ -2,7 +2,6 @@ package com.gigashad.tpeng.product_service.controller;
 
 import com.gigashad.tpeng.product_service.dto.ProductRequest;
 import com.gigashad.tpeng.product_service.dto.ProductResponse;
-import com.gigashad.tpeng.product_service.model.Product;
 import com.gigashad.tpeng.product_service.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
